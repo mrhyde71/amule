@@ -1239,7 +1239,7 @@ void PrefsUnifiedDlg::CreateEventPanels(const int idx, const wxString& vars, wxW
 	wxStaticBoxSizer *item7 = new wxStaticBoxSizer( item8, wxVERTICAL );
 
 	wxCheckBox *item9 = new wxCheckBox( parent, USEREVENTS_FIRST_ID + idx * USEREVENTS_IDS_PER_EVENT + 1, _("Enable command execution on core"), wxDefaultPosition, wxDefaultSize, 0 );
-	item7->Add( item9, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 5 );
+	item7->Add( item9, 0, /*wxALIGN_CENTER_VERTICAL|*/wxLEFT|wxRIGHT, 5 );
 
 	wxFlexGridSizer *item10 = new wxFlexGridSizer( 3, 0, 0 );
 	item10->AddGrowableCol( 2 );
@@ -1253,10 +1253,10 @@ void PrefsUnifiedDlg::CreateEventPanels(const int idx, const wxString& vars, wxW
 	item12->Enable(CUserEvents::IsCoreCommandEnabled(static_cast<enum CUserEvents::EventType>(idx)));
 	item10->Add( item12, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
-	item7->Add( item10, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 0 );
+	item7->Add( item10, 0, wxGROW/*|wxALIGN_CENTER_VERTICAL*/|wxALL, 0 );
 
 	wxCheckBox *item14 = new wxCheckBox( parent, USEREVENTS_FIRST_ID + idx * USEREVENTS_IDS_PER_EVENT + 3, _("Enable command execution on GUI"), wxDefaultPosition, wxDefaultSize, 0 );
-	item7->Add( item14, 0, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT, 5 );
+	item7->Add( item14, 0, /*wxALIGN_CENTER_VERTICAL|*/wxLEFT|wxRIGHT, 5 );
 
 	wxFlexGridSizer *item15 = new wxFlexGridSizer( 3, 0, 0 );
 	item15->AddGrowableCol( 2 );
@@ -1270,12 +1270,12 @@ void PrefsUnifiedDlg::CreateEventPanels(const int idx, const wxString& vars, wxW
 	item17->Enable(CUserEvents::IsGUICommandEnabled(static_cast<enum CUserEvents::EventType>(idx)));
 	item15->Add( item17, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
-	item7->Add( item15, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 0 );
+	item7->Add( item15, 0, wxGROW/*|wxALIGN_CENTER_VERTICAL*/|wxALL, 0 );
 
 	wxStaticText *item13 = new wxStaticText( parent, -1, _("The following variables will be replaced:") + vars, wxDefaultPosition, wxDefaultSize, 0 );
-	item7->Add( item13, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+	item7->Add( item13, 0, wxGROW/*|wxALIGN_CENTER_VERTICAL*/|wxALL, 5 );
 
-	IDC_PREFS_EVENTS_PAGE->Add(item7, 0, wxGROW|wxALIGN_CENTER_VERTICAL|wxALL, 5);
+	IDC_PREFS_EVENTS_PAGE->Add(item7, 0, wxGROW/*|wxALIGN_CENTER_VERTICAL*/|wxALL, 5);
 
 	IDC_PREFS_EVENTS_PAGE->Layout();
 	IDC_PREFS_EVENTS_PAGE->Hide(idx + 1);
